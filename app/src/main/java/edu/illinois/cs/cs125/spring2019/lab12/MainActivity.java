@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import android.widget.Button;
+
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -38,7 +41,13 @@ public final class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        startAPICall("192.17.96.8");
+
+        final Button lookup = findViewById(R.id.lookup_address);
+        lookup.setOnClickListener(v ->  {
+            Log.d(TAG, "Set address lookup click");
+            startAPICall("192.17.96.8");
+        });
+
     }
 
     /**
